@@ -96,7 +96,7 @@ const CatalogForHer = () => {
     return (
         <Helmet title="FOR HER">
             <div className="catalog-header">
-                <h2 className="catalog-header_heading">For Him</h2>
+                <h2 className="catalog-header_heading">For Her</h2>
                 <p>
                     Tất cả những sản phẩm Mới nhất nằm trong BST được mở bán Hàng Tuần sẽ được cập nhật liên tục tại
                     đây. Chắc chắn bạn sẽ tìm thấy những sản phẩm Đẹp Nhất - Vừa Vặn Nhất - Phù Hợp nhất với phong cách
