@@ -1,0 +1,23 @@
+.section {
+    margin-bottom: 80px;
+
+    & > * ~ * {
+        margin-top: 70px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 600;
+        color: black;
+    }
+
+    &__other {
+        text-transform: uppercase;
+        text-align: start;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: black;
+    }
+}

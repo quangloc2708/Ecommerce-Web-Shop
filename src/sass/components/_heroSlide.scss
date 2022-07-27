@@ -1,0 +1,24 @@
+.hero-slider {
+    margin-bottom: 40px;
+    &_item {
+        &_tablet {
+            @include mobile {
+                display: none;
+            }
+        }
+        &_mobile {
+            display: none;
+            @include mobile {
+                display: flex;
+            }
+        }
+    }
+}
+.hero-slider_item_image {
+    position: relative;
+}
+.hero-slider_item_btn {
+    position: absolute;
+    top: 90%;
+    left: 45.5%;
+}

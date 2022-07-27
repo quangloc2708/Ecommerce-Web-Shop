@@ -1,0 +1,17 @@
+.footer {
+    padding: 70px 0;
+    box-shadow: $box-shadow;
+    font-size: 1.1rem;
+
+    &_title {
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        font-weight: 600;
+    }
+
+    &_content {
+        p {
+            margin-bottom: 1.25rem;
+        }
+    }
+}

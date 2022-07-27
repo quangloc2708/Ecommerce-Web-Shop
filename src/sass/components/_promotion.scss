@@ -1,0 +1,8 @@
+.promotion_popup {
+    &_item {
+        @include flex(center, center);
+        padding: 10px;
+        color: $txt-white;
+        background-color: $main-color;
+    }
+}
