@@ -28,9 +28,11 @@ const HeroSlide = (props) => {
                 >
                     {data.getTabletSliderData().map((item, index) => (
                         <SplideSlide key={index}>
-                            <div className="hero-slider_item_image">
-                                <img src={item.img} alt="" />
-                            </div>
+                            <Link to={item.path}>
+                                <div className="hero-slider_item_image">
+                                    <img src={item.img} alt="" />
+                                </div>
+                            </Link>
                         </SplideSlide>
                     ))}
                 </Splide>

@@ -91,7 +91,7 @@ const Header = () => {
                             <i className="bx bx-search"></i>
                         </div>
                         <div className="header_menu_item header_menu_right_item">
-                            <i class="bx bx-heart"></i>
+                            <i className="bx bx-heart"></i>
                         </div>
                         <div className="header_menu_item header_menu_right_item">
                             <Link to="/cart">
