@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { addItem } from '../redux/shopping-cart/cartItemsSlice';
+import { remove } from '../redux/product-modal/producModalSlice';
 
 import Decription from './Decription';
 import Button from './Button';
@@ -102,6 +103,7 @@ const ProductView = (props) => {
                     quantity: quantity,
                     price: product.price,
                 }),
+                remove(),
             );
             showToast('success');
         }

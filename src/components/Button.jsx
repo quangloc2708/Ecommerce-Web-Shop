@@ -8,8 +8,13 @@ const Button = (props) => {
 
     const animate = props.animate ? 'btn-animate' : '';
 
+    const className = props.className ? [props.className] : '';
+
     return (
-        <button className={`btn ${bg} ${size} ${animate}`} onClick={props.onClick ? () => props.onClick() : null}>
+        <button
+            className={`btn ${bg} ${size} ${animate} ${className}  `}
+            onClick={props.onClick ? () => props.onClick() : null}
+        >
             <span className="btn__txt">{props.children}</span>
             {props.icon ? (
                 <span className="btn__icon">

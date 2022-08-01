@@ -27,6 +27,8 @@ const Cart = () => {
         setTotalPrice(cartItems.reduce((total, item) => total + Number(item.quantity) * Number(item.price), 0));
     }, [cartItems]);
 
+    console.log(cartItems);
+
     return (
         <Helmet title="Giỏ hàng">
             <div className="cart">
@@ -39,7 +41,13 @@ const Cart = () => {
                         </div>
                     </div>
                     <div className="cart_info_btn">
-                        <Button size="block">Đặt hàng</Button>
+                        {cartItems.length > 0 && (
+                            <Link to="/checkout">
+                                <Button className="cart_info_btn_checkout" size="block">
+                                    Đặt hàng
+                                </Button>
+                            </Link>
+                        )}
                         <Link to="/for-him">
                             <Button size="block">Tiếp tục mua hàng</Button>
                         </Link>

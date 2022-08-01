@@ -41,13 +41,16 @@
                 }
             }
         }
-        &_btn > * {
-            margin-bottom: 20px;
+        &_btn {
+            &_checkout {
+                margin-bottom: 20px;
+            }
         }
     }
 
     &_list {
         flex-grow: 1;
+        margin-top: 30px;
     }
 
     &_item {

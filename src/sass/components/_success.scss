@@ -1,0 +1,24 @@
+.page_success {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    &_txt {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        justify-content: center;
+        text-align: center;
+
+        span {
+            font-style: italic;
+            line-height: 1.5rem;
+        }
+    }
+}

@@ -6,6 +6,8 @@ import CatalogForHim from '../pages/CatalogForHim';
 import CatalogForHer from '../pages/CatalogForHer';
 import Product from '../pages/Product';
 import Cart from '../pages/Cart';
+import Checkout from '../pages/Checkout';
+import Success from '../pages/Success';
 
 // Public routes
 const publicRoutes = [
@@ -14,6 +16,8 @@ const publicRoutes = [
     { path: '/for-her', component: CatalogForHer },
     { path: '/catalog/:slug', component: Product },
     { path: '/cart', component: Cart },
+    { path: '/checkout', component: Checkout },
+    { path: '/success', component: Success },
 ];
 
 const privateRoutes = [];
