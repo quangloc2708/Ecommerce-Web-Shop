@@ -216,6 +216,9 @@ const Checkout = () => {
                             />
                             <p>{formErrors.address}</p>
                         </div>
+                        <div className="checkout_info_item">
+                            <input type="text" placeholder="* Số nhà tên đường..." name="address" />
+                        </div>
                         <p>(*) là trường không được để trống</p>
                     </div>
                     <div className="checkout_info">
