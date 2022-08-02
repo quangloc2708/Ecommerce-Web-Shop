@@ -28,6 +28,7 @@ const Cart = () => {
     }, [cartItems]);
 
     console.log(cartItems);
+    console.log(cartProducts);
 
     return (
         <Helmet title="Giỏ hàng">

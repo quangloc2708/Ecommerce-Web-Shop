@@ -31,6 +31,7 @@ const CartItem = (props) => {
     const removeCartItem = () => {
         dispatch(removeItem(item));
     };
+    console.log(item);
 
     return (
         <div className="cart_item">
