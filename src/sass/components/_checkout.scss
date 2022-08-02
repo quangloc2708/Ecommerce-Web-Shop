@@ -81,6 +81,7 @@
             &_btn {
                 width: 20%;
                 padding: 10px 0px;
+                height: 100%;
             }
             &_item {
                 @include flex(center, space-between);

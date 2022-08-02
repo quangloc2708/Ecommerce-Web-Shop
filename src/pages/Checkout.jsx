@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Grid from '../components/Grid';
+import Helmet from '../components/Helmet';
 import Button from '../components/Button';
 import CartItem from '../components/CartItem';
 import Toast from '../utils/toast/Toast';
@@ -168,117 +169,120 @@ const Checkout = () => {
     };
 
     return (
-        <div className="checkout">
-            <Grid col={2} mdCol={2} smCol={1} gap={20}>
-                <div>
-                    <div className="checkout_info checkout_info_user ">
-                        <h2 className="checkout_info_item">Thông tin giao hàng</h2>
-                        <div className="checkout_info_item">
-                            <input
-                                type="text"
-                                placeholder="* Họ và tên"
-                                name="username"
-                                value={formValues.username}
-                                onChange={(e) => handleChange(e)}
-                            />
-                            <p>{formErrors.username}</p>
-                        </div>
-                        <div className="checkout_info_item">
-                            <input
-                                type="email"
-                                placeholder="*Email"
-                                name="email"
-                                value={formValues.email}
-                                onChange={(e) => handleChange(e)}
-                            />
-                            <p>{formErrors.email}</p>
-                        </div>
-                        <div className="checkout_info_item">
-                            <input
-                                type="text"
-                                placeholder="* Số điện thoại"
-                                name="phoneNumber"
-                                value={formValues.phoneNumber}
-                                onChange={(e) => handleChange(e)}
-                            />
-                            <p>{formErrors.phoneNumber}</p>
-                        </div>
-                        <div className="checkout_info_item">
-                            <Address />
-                        </div>
-                        <div className="checkout_info_item">
-                            <input
-                                type="text"
-                                placeholder="* Số nhà tên đường..."
-                                name="address"
-                                value={formValues.address}
-                                onChange={(e) => handleChange(e)}
-                            />
-                            <p>{formErrors.address}</p>
-                        </div>
-                        <div className="checkout_info_item">
-                            <input type="text" placeholder="* Số nhà tên đường..." name="address" />
-                        </div>
-                        <p>(*) là trường không được để trống</p>
-                    </div>
-                    <div className="checkout_info">
-                        <h2 className="checkout_info_item">Phương thức thanh toán</h2>
-                        {payment.map((item) => (
-                            <div
-                                // ref={paymentRef}
-                                className="checkout_info_payment"
-                                key={item.id}
-                                onClick={() => setchecked(item.id)}
-                            >
+        <Helmet title="Thanh toán">
+            <div className="checkout">
+                <Grid col={2} mdCol={2} smCol={1} gap={20}>
+                    <div>
+                        <div className="checkout_info checkout_info_user ">
+                            <h2 className="checkout_info_item">Thông tin giao hàng</h2>
+                            <div className="checkout_info_item">
                                 <input
-                                    className="checkout_info_payment_input"
-                                    type="radio"
-                                    id={item.id}
-                                    onChange={() => setchecked(item.id)}
-                                    checked={checked === item.id}
+                                    type="text"
+                                    placeholder="* Họ và tên"
+                                    name="username"
+                                    value={formValues.username}
+                                    onChange={(e) => handleChange(e)}
                                 />
-                                <i className={`checkout_info_payment_icon ${item.icon}`}></i>
-                                <label className="checkout_info_payment_txt">{item.display}</label>
+                                <p>{formErrors.username}</p>
                             </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="checkout_confirm">
-                    <div className="cart checkout_confirm_product ">
-                        <div className="cart_list">
-                            {cartProducts.map((item, index) => (
-                                <CartItem item={item} key={index} />
+                            <div className="checkout_info_item">
+                                <input
+                                    type="email"
+                                    placeholder="*Email"
+                                    name="email"
+                                    value={formValues.email}
+                                    onChange={(e) => handleChange(e)}
+                                />
+                                <p>{formErrors.email}</p>
+                            </div>
+                            <div className="checkout_info_item">
+                                <input
+                                    type="text"
+                                    placeholder="* Số điện thoại"
+                                    name="phoneNumber"
+                                    value={formValues.phoneNumber}
+                                    onChange={(e) => handleChange(e)}
+                                />
+                                <p>{formErrors.phoneNumber}</p>
+                            </div>
+                            <div className="checkout_info_item">
+                                <Address />
+                            </div>
+                            <div className="checkout_info_item">
+                                <input
+                                    type="text"
+                                    placeholder="* Số nhà tên đường..."
+                                    name="address"
+                                    value={formValues.address}
+                                    onChange={(e) => handleChange(e)}
+                                />
+                                <p>{formErrors.address}</p>
+                            </div>
+                            <div className="checkout_info_item">
+                                <input type="text" placeholder="* Số nhà tên đường..." name="address" />
+                            </div>
+                            <p>(*) là trường không được để trống</p>
+                        </div>
+                        <div className="checkout_info">
+                            <h2 className="checkout_info_item">Phương thức thanh toán</h2>
+                            {payment.map((item) => (
+                                <div
+                                    // ref={paymentRef}
+                                    className="checkout_info_payment"
+                                    key={item.id}
+                                    onClick={() => setchecked(item.id)}
+                                >
+                                    <input
+                                        className="checkout_info_payment_input"
+                                        type="radio"
+                                        id={item.id}
+                                        onChange={() => setchecked(item.id)}
+                                        checked={checked === item.id}
+                                    />
+                                    <i className={`checkout_info_payment_icon ${item.icon}`}></i>
+                                    <label className="checkout_info_payment_txt">{item.display}</label>
+                                </div>
                             ))}
                         </div>
                     </div>
-                    <div className="checkout_confirm_list">
-                        <input type="text" placeholder="Mã giảm giá..." />
-                        <button className="checkout_confirm_list_btn">Áp dụng</button>
-                        <div className="checkout_confirm_list_item">
-                            <h4>Tổng:</h4>
-                            <h4>{numberWithCommas(totalPrice)} VNĐ</h4>
+
+                    <div className="checkout_confirm">
+                        <div className="cart checkout_confirm_product ">
+                            <div className="cart_list">
+                                {cartProducts.map((item, index) => (
+                                    <CartItem item={item} key={index} />
+                                ))}
+                            </div>
                         </div>
-                        <div className="checkout_confirm_list_item">
-                            <span>Ưu đãi:</span>
-                            <span>-0 VNĐ</span>
+                        <div className="checkout_confirm_list">
+                            <input type="text" placeholder="Mã giảm giá..." />
+                            <button className="checkout_confirm_list_btn">Áp dụng</button>
+
+                            <div className="checkout_confirm_list_item">
+                                <h4>Tổng:</h4>
+                                <h4>{numberWithCommas(totalPrice)} VNĐ</h4>
+                            </div>
+                            <div className="checkout_confirm_list_item">
+                                <span>Ưu đãi:</span>
+                                <span>-0 VNĐ</span>
+                            </div>
+                            <div className="checkout_confirm_list_item">
+                                <span>Phí ship</span>
+                                <span>{numberWithCommas(transportFee)} VNĐ</span>
+                            </div>
+                            <div className="checkout_confirm_list_item">
+                                <h4>Thành tiền:</h4>
+                                <h4>{numberWithCommas(Number(transportFee) + Number(totalPrice))} VNĐ</h4>
+                            </div>
+                            <Button onClick={() => handleSubmit()} size="large">
+                                Hoàn tất đơn hàng
+                            </Button>
                         </div>
-                        <div className="checkout_confirm_list_item">
-                            <span>Phí ship</span>
-                            <span>{numberWithCommas(transportFee)} VNĐ</span>
-                        </div>
-                        <div className="checkout_confirm_list_item">
-                            <h4>Thành tiền:</h4>
-                            <h4>{numberWithCommas(Number(transportFee) + Number(totalPrice))} VNĐ</h4>
-                        </div>
-                        <Button onClick={() => handleSubmit()} size="large">
-                            Hoàn tất đơn hàng
-                        </Button>
                     </div>
-                </div>
-            </Grid>
-            <Toast toastlist={list} animation={'slideInLeft'} setList={setList} />
-        </div>
+                </Grid>
+                <Toast toastlist={list} animation={'slideInLeft'} setList={setList} />
+            </div>
+        </Helmet>
     );
 };
 

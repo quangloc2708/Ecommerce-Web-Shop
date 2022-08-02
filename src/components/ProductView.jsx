@@ -153,7 +153,7 @@ const ProductView = (props) => {
                     </div>
                     <div className={`product-decription ${decriptionExpand ? 'expand' : ''}`}>
                         <div className="product-decription_title">Chi tiết sản phẩm</div>
-                        <div className="product-decription_name">{product.decription}</div>
+                        <div className="product-decription_name">{product.title}</div>
                         <p>--</p>
                         <div className="product-decription_info_heading">Thông tin sản phẩm</div>
                         <div className="product-decription_info_item">Màu sắc: {product.color_info}</div>
